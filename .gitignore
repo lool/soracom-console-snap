@@ -1,4 +1,6 @@
-parts/*
-prime/*
-stage/*
-*.snap
+/parts/
+/prime/
+/stage/
+/*.snap
+._*
+.DS_Store
