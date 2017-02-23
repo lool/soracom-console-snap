@@ -1,6 +1,18 @@
 Webapp for Soracom
 
-Build against 16.04 with ppa:ci-train-ppa-service/stable-phone-overlay enabled:
-sudo add-apt-repository ppa:ci-train-ppa-service/stable-phone-overlay &&
-sudo apt update &&
-sudo apt upgrade
+Build against 16.04 with ppa:ci-train-ppa-service/stable-phone-overlay enabled. To do this in a clean environment:
+    sudo apt install lxd
+    lxc launch ubuntu: sora-build
+    lxc file push sora-snap.tar sora-build/home/ubuntu
+    lxc exec sora-build su - ubuntu
+    sudo add-apt-repository ppa:ci-train-ppa-service/stable-phone-overlay
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install snapcraft
+    tar xvf sora-snap.tar
+    cd sora-snap
+    snapcraft
+    ^D
+    lxc file pull \
+        sora-build/home/ubuntu/sora-snap/soracom-console_1.0.0_amd64.snap .
+
