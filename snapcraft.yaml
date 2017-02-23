@@ -28,7 +28,7 @@ plugs:
     allow-sandbox: false
   platform:
     interface: content
-    content: ubuntu-appaplatform1
+    content: ubuntu-app-platform1
     target: ubuntu-app-platform
     default-provider: ubuntu-app-platform
 
