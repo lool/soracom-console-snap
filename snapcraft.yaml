@@ -1,0 +1,37 @@
+name: soracom-webapp
+version: '1.0'
+summary: Soracom webapp
+description: |
+  Webapp version of the Soracom web application.
+
+grade: stable
+confinement: strict
+
+apps:
+  Soracom-webapp:
+    command: webapp-launcher --enable-back-forward https://console.soracom.io/ %u
+    plugs:
+      - browser-sandbox
+      - camera
+      - network
+      - network-bind
+      - opengl
+      - pulseaudio
+      - screen-inhibit-control
+      - unity7
+
+plugs:
+  browser-sandbox:
+    interface: browser-support
+    allow-sandbox: false
+  platform:
+    interface: content
+    content: ubuntu-app-platform1
+    target: ubuntu-app-platform
+    default-provider: ubuntu-app-platform
+
+parts:
+  webapp-container:
+    after: [desktop-ubuntu-app-platform,webapp-helper]
+    plugin: nil
+

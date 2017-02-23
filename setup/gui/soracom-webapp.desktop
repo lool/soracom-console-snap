@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Exec=soracom-webapp
+Name=Soracom
+X-GNOME-FullName=Soracom
+Icon=${SNAP}/meta/gui/soracom256.png
+X-Ubuntu-Touch=true
+X-Ubuntu-Single-Instance=true
+X-Ubuntu-Default-Department-ID=internet
