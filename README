@@ -1,1 +1,6 @@
 Webapp for Soracom
+
+Build against 16.04 with ppa:ci-train-ppa-service/stable-phone-overlay enabled:
+sudo add-apt-repository ppa:ci-train-ppa-service/stable-phone-overlay &&
+sudo apt update &&
+sudo apt upgrade
