@@ -33,5 +33,5 @@ plugs:
 
 parts:
   webapp-container:
-    after: [ubuntu-app-platformdesktop-ubuntu-app-platform,webapp-helper]
+    after: [desktop-ubuntu-app-platform,webapp-helper]
     plugin: nil
