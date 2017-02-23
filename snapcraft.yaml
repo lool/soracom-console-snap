@@ -1,8 +1,9 @@
-name: soracom
-version: '0.1.8'
-summary: Soracom CLI and Web App
+name: soracom-console
+version: '1.0.0'
+summary: Soracom console Web App
 description: |
-    Soracom IoT platrofm CLI and Web App.
+    Soracom IoT platrofm console Web App.
+    Let you open Soracom's web management console directly form applications menu
     
 grade: stable
 confinement: strict
@@ -19,8 +20,6 @@ apps:
       - screen-inhibit-control
       - unity7
       - mir
-  soracom:
-    command: soracom
 
 plugs:
   browser-sandbox:
@@ -34,9 +33,5 @@ plugs:
 
 parts:
   webapp-container:
-    after: [desktop-ubuntu-app-platform,webapp-helper]
+    after: [ubuntu-app-platformdesktop-ubuntu-app-platform,webapp-helper]
     plugin: nil
-  soracom-deb:
-    source: https://github.com/soracom/soracom-cli/releases/download/v0.1.8/soracom_0.1.8_amd64.deb
-    source-type: deb
-    plugin: dump

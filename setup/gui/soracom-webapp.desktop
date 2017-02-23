@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
 Terminal=false
-Exec=soracom-webapp
-Name=Soracom
-X-GNOME-FullName=Soracom
+Exec=/snap/bin/soracom.soracom-console
+Name=Soracom Console
+X-GNOME-FullName=Soracom Console
 Icon=${SNAP}/meta/gui/soracom256.png
 X-Ubuntu-Touch=true
 X-Ubuntu-Single-Instance=true
