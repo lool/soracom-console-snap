@@ -1,24 +1,26 @@
-name: soracom-webapp
-version: '1.0'
-summary: Soracom webapp
+name: soracom
+version: '0.1.8'
+summary: Soracom CLI and Web App
 description: |
-  Webapp version of the Soracom web application.
-
+    Soracom IoT platrofm CLI and Web App.
+    
 grade: stable
 confinement: strict
 
 apps:
-  Soracom-webapp:
-    command: webapp-launcher --enable-back-forward https://console.soracom.io/ %u
+  soracom-console:
+    command: webapp-launcher --enable-back-forward https://console.soracom.io %u
     plugs:
       - browser-sandbox
-      - camera
       - network
       - network-bind
       - opengl
       - pulseaudio
       - screen-inhibit-control
       - unity7
+      - mir
+  soracom:
+    command: soracom
 
 plugs:
   browser-sandbox:
@@ -26,7 +28,7 @@ plugs:
     allow-sandbox: false
   platform:
     interface: content
-    content: ubuntu-app-platform1
+    content: ubuntu-appaplatform1
     target: ubuntu-app-platform
     default-provider: ubuntu-app-platform
 
@@ -34,4 +36,7 @@ parts:
   webapp-container:
     after: [desktop-ubuntu-app-platform,webapp-helper]
     plugin: nil
-
+  soracom-deb:
+    source: https://github.com/soracom/soracom-cli/releases/download/v0.1.8/soracom_0.1.8_amd64.deb
+    source-type: deb
+    plugin: dump
