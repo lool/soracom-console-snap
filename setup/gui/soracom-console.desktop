@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Terminal=false
-Exec=/snap/bin/soracom-console
+Exec=soracom-console
 Name=Soracom Console
 X-GNOME-FullName=Soracom Console
 Icon=${SNAP}/meta/gui/soracom256.png
